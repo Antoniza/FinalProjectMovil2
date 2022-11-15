@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.App">
+    <Application.Resources>
+        <!--#region Colors-->
+        <Color x:Key="launcher_background">#FFFFFF</Color>
+        <Color x:Key="colorPrimary">#1E579B</Color>
+        <Color x:Key="colorPrimaryDark">#0E1C5B</Color>
+        <Color x:Key="colorAccent">#009204</Color>
+        <Color x:Key="colorFont">#FFFFFF</Color>
+        <Color x:Key="colorShadows">#888</Color>
+        <!--#endregion-->
+    </Application.Resources>
+</Application>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.AdminViews.ProductForm">
+    <ContentPage.Content>
+        <StackLayout Padding="15, 15"   BackgroundColor="{StaticResource colorPrimary}">
+            <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="15">
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Frame CornerRadius="15">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <SearchBar Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="10" FontSize="12" Placeholder="Buscar..."></SearchBar>
+
+                                <Frame Grid.Column="3" CornerRadius="50" HeightRequest="20" WidthRequest="20" BackgroundColor="{StaticResource colorAccent}" HorizontalOptions="Center">
+                                    <Label Text="+" Scale="2" TextColor="#ffffff" FontAttributes="Bold" HorizontalOptions="Center" Margin="-4"></Label>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+                        <ListView Grid.Row="3" x:Name="ProductListView" 
+                  ItemsSource="{Binding students}"
+                  HasUnevenRows="True"                
+                  IsRefreshing="True"
+                  IsPullToRefreshEnabled="True"
+                  >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <!--<ViewCell.ContextActions>
+                                <MenuItem Text="Edit"
+                                          x:Name="EditMenuItem"
+                                          CommandParameter="{Binding Id}"
+                                          Clicked="EditMenuItem_Clicked"></MenuItem>
+                                <MenuItem Text="Delete"
+                                          x:Name="DeleteMenuItem"
+                                          CommandParameter="{Binding Id}"
+                                          Clicked="DeleteMenuItem_Clicked"></MenuItem>
+                            </ViewCell.ContextActions>-->
+                                        <SwipeView>
+                                            <SwipeView.LeftItems>
+                                                <SwipeItems>
+                                                    <SwipeItem Text="Edit" BackgroundColor="Red"
+                                                   x:Name="EditSwipeItem"
+                                                   CommandParameter="{Binding Id}"
+                                                   ></SwipeItem>
+                                                    <SwipeItem Text="Delete" BackgroundColor="Red" CommandParameter="{Binding Id}"
+                                                   x:Name="DeleteSwipeItem"></SwipeItem>
+                                                </SwipeItems>
+                                            </SwipeView.LeftItems>
+
+                                            <StackLayout Orientation="Horizontal" Padding="5">
+                                                <Frame Padding="0"
+                                   HeightRequest="60"
+                                   WidthRequest="60"
+                                   BackgroundColor="White"
+                                   CornerRadius="100"
+                                   BorderColor="Teal"
+                                   IsClippedToBounds="True">
+                                                    <Frame.Content>
+                                                        <Image Source="{Binding Image}" Aspect="Fill"/>
+                                                    </Frame.Content>
+                                                </Frame>
+
+                                                <StackLayout HorizontalOptions="StartAndExpand">
+                                                    <Label Text="{Binding Name}" FontSize="Medium" />
+                                                    <Label Text="{Binding Email}"/>
+                                                </StackLayout>
+                                                <StackLayout VerticalOptions="Center"
+                                         HorizontalOptions="EndAndExpand">
+                                                    <Image Source="edit.png"
+                                       HeightRequest="20"
+                                       WidthRequest="20">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer x:Name="EditTap"
+                                                              CommandParameter="{Binding Id}"/>
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                    <Image Source="delete.png"
+                                       HeightRequest="20"
+                                       WidthRequest="20">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer x:Name="DeleteTapp"
+                                                              CommandParameter="{Binding Id}"/>
+                                                        </Image.GestureRecognizers>
+
+                                                    </Image>
+
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </SwipeView>
+
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
