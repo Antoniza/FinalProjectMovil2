@@ -6479,11 +6479,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProject\\FinalProject.iOS\\FinalProject.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject.iOS\\FinalProject.iOS.csproj",
       "projectName": "FinalProject.iOS",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProject\\FinalProject.iOS\\FinalProject.iOS.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject.iOS\\FinalProject.iOS.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProject\\FinalProject.iOS\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -6504,8 +6504,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProject\\FinalProject\\FinalProject.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProject\\FinalProject\\FinalProject.csproj"
+            "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject\\FinalProject.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject\\FinalProject.csproj"
             }
           }
         }

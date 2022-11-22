@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XCQ0TwElOFOYep3KgKZntifAypE7DuLHPIofO8FKnCahuLXvfPzZeUMCrmWEy686VD/ZAOg1xFlAkYQu8EdlhA==",
+  "dgSpecHash": "ZNUixAVmArs1nuPy19zcd4kE34TILgxo7E8HFbvKHILe52XqBUFY57BWx3KO/DlAwENK8dIFkyfxp3hLaINCXA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProject\\FinalProject.Android\\FinalProject.Android.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject.Android\\FinalProject.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\commonservicelocator\\2.0.2\\commonservicelocator.2.0.2.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\firebaseauthentication.net\\3.7.2\\firebaseauthentication.net.3.7.2.nupkg.sha512",

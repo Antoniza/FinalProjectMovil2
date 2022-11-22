@@ -118,7 +118,7 @@ namespace FinalProject.Providers
 
                 if(user.Level == "C")
                 {
-                    await Application.Current.MainPage.Navigation.PushAsync(new StartPage());
+                    await Application.Current.MainPage.Navigation.PushAsync(new ClientPage());
                 }
                 else if (user.Level == "D")
                 {

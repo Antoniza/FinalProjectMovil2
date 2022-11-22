@@ -5883,11 +5883,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProject\\FinalProject.Android\\FinalProject.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject.Android\\FinalProject.Android.csproj",
       "projectName": "FinalProject.Android",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProject\\FinalProject.Android\\FinalProject.Android.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject.Android\\FinalProject.Android.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProject\\FinalProject.Android\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -5908,8 +5908,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProject\\FinalProject\\FinalProject.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProject\\FinalProject\\FinalProject.csproj"
+            "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject\\FinalProject.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject\\FinalProject.csproj"
             }
           }
         }
