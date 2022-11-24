@@ -20,20 +20,8 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Frame CornerRadius="15">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <SearchBar Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="10" FontSize="12" Placeholder="Buscar..."></SearchBar>
-
-                                <Frame Grid.Column="3" CornerRadius="50" HeightRequest="20" WidthRequest="20" BackgroundColor="{StaticResource colorAccent}" HorizontalOptions="Center">
-                                    <Label Text="+" Scale="2" TextColor="#ffffff" FontAttributes="Bold" HorizontalOptions="Center" Margin="-4"></Label>
-                                </Frame>
-                            </Grid>
+                        <Frame CornerRadius="5" Padding="5,5" HeightRequest="25">
+                            <SearchBar Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="10" FontSize="12" Placeholder="Buscar..."></SearchBar>
                         </Frame>
                         <ListView Grid.Row="3" x:Name="ProductListView" 
                   ItemsSource="{Binding students}"

@@ -1252,3 +1252,4 @@ C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalPro
 C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\android\src\crc64feb19cf80fd67ed2\CustomEntryRenderer.java

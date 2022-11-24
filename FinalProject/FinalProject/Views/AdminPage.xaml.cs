@@ -27,6 +27,8 @@ namespace FinalProject.Views
             GetProfileInformationAndRefreshToken();
             ProductButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel()));
             UserButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToUsersPanel()));
+
+            MenuButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => OpenModal()));
         }
 
         public async void GetProfileInformationAndRefreshToken()
@@ -58,6 +60,16 @@ namespace FinalProject.Views
         private void ToUsersPanel()
         {
             Navigation.PushAsync(new UserForm());
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OpenModal()
+        {
+            Application.Current.MainPage.DisplayAlert("Alerta", "Intenta salir", "OK");
         }
     }
 }

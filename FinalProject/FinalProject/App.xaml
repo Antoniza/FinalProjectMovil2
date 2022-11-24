@@ -10,6 +10,7 @@
         <Color x:Key="colorAccent">#009204</Color>
         <Color x:Key="colorFont">#FFFFFF</Color>
         <Color x:Key="colorShadows">#888</Color>
+        <Color x:Key="colorBlack">#000</Color>
         <!--#endregion-->
     </Application.Resources>
 </Application>

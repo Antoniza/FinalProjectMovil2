@@ -1,1 +1,1 @@
-<Devices><Device id="127.0.0.1:21503"><ResultingAbi>x86_64</ResultingAbi><SdkVersion>25</SdkVersion></Device></Devices>
+<Devices><Device id="127.0.0.1:21503"><ResultingAbi>x86_64</ResultingAbi><SdkVersion>25</SdkVersion></Device><Device id="Q52020080104750"><ResultingAbi>armeabi-v7a</ResultingAbi><SdkVersion>23</SdkVersion></Device><Device id="R5CRC3WR6WP"><ResultingAbi>armeabi-v7a</ResultingAbi><SdkVersion>31</SdkVersion></Device></Devices>

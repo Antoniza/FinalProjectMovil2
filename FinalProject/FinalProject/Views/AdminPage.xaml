@@ -6,78 +6,84 @@
     <ContentPage.Content>
         <StackLayout Padding="0">
             <Frame HeightRequest="40" Padding="15, 15" BackgroundColor="{StaticResource colorPrimary}">
-                <Button Text="LogOut" Command="{Binding LogOutCommand}"></Button>
+                <Image Source="https://i.ibb.co/0m4SnTC/Hamburger-Menu.png" x:Name="MenuButton" Scale="0.8" HorizontalOptions="End"></Image>
+                <!--<Button Text="LogOut" Command="{Binding LogOutCommand}" BackgroundColor="{StaticResource colorFont}" CornerRadius="20"></Button>-->
             </Frame>
-            <Grid RowSpacing="20" Padding="15, 15">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                </Grid.RowDefinitions>
+            <ScrollView>
+                <Grid RowSpacing="20" Padding="15, 15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
 
-                <Frame Grid.Row="1" HeightRequest="100" Padding="15, 15"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="UserButton">
-                    <Grid ColumnSpacing="20">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="2*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="https://i.ibb.co/vhh0Gkj/users.png"></Image>
-                        <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                            <StackLayout>
-                                <Label Text="Usuarios" x:Name="UserName" FontSize="25" TextColor="{StaticResource colorFont}"></Label>
-                                <Label Text="Lista de clientes" TextColor="{StaticResource colorFont}"></Label>
-                            </StackLayout>
-                        </Frame>
-                    </Grid>
-                </Frame>
-                <Frame Grid.Row="2" HeightRequest="100" Padding="15, 15"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="ProductButton">
-                    <Grid ColumnSpacing="20">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="2*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="https://i.ibb.co/vYjdFMX/Economico-Logo.png"></Image>
-                        <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                            <StackLayout>
-                                <Label Text="Productos" FontSize="25" TextColor="{StaticResource colorFont}"></Label>
-                                <Label Text="Gestion de productos" TextColor="{StaticResource colorFont}"></Label>
-                            </StackLayout>
-                        </Frame>
-                    </Grid>
-                </Frame>
-                <Frame Grid.Row="3" HeightRequest="100" Padding="15, 15"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15">
-                    <Grid ColumnSpacing="20">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="2*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="https://i.ibb.co/Fn7G2QN/sells.png"></Image>
-                        <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                            <StackLayout>
-                                <Label Text="Ventas" FontSize="25" TextColor="{StaticResource colorFont}"></Label>
-                                <Label Text="Reportes de ventas" TextColor="{StaticResource colorFont}"></Label>
-                            </StackLayout>
-                        </Frame>
-                    </Grid>
-                </Frame>
-                <Frame Grid.Row="4" HeightRequest="100" Padding="15, 15"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15">
-                    <Grid ColumnSpacing="20">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="2*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="https://i.ibb.co/FBm5RHT/delivery.png"></Image>
-                        <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                            <StackLayout>
-                                <Label Text="Repartidores" FontSize="25" TextColor="{StaticResource colorFont}"></Label>
-                                <Label Text="Administracion de repartidores" TextColor="{StaticResource colorFont}"></Label>
-                            </StackLayout>
-                        </Frame>
-                    </Grid>
-                </Frame>
-            </Grid>
+                    <Frame Grid.Row="1" HeightRequest="100" Padding="15, 15"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="UserButton">
+                        <Grid ColumnSpacing="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="https://i.ibb.co/vhh0Gkj/users.png"></Image>
+                            <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                <StackLayout>
+                                    <Label Text="Usuarios" x:Name="UserName" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Lista de clientes" TextColor="{StaticResource colorFont}" FontSize="12"></Label>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="2" HeightRequest="100" Padding="15, 15"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="ProductButton">
+                        <Grid ColumnSpacing="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="https://i.ibb.co/vYjdFMX/Economico-Logo.png"></Image>
+                            <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                <StackLayout>
+                                    <Label Text="Productos" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Gestion de productos" FontSize="12" TextColor="{StaticResource colorFont}"></Label>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="3" HeightRequest="100" Padding="15, 15"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15">
+                        <Grid ColumnSpacing="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="https://i.ibb.co/Fn7G2QN/sells.png"></Image>
+                            <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                <StackLayout>
+                                    <Label Text="Ventas" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Reportes de ventas" FontSize="12" TextColor="{StaticResource colorFont}"></Label>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="4" HeightRequest="100" Padding="15, 15"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15">
+                        <Grid ColumnSpacing="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="https://i.ibb.co/FBm5RHT/delivery.png"></Image>
+                            <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                <StackLayout>
+                                    <Label Text="Repartidores" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Administracion de repartidores" FontSize="12" TextColor="{StaticResource colorFont}"></Label>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </ScrollView>
+            <ContentView x:Name="PopUpUser" HeightRequest="250" BackgroundColor="{StaticResource colorPrimary}">
+                
+            </ContentView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

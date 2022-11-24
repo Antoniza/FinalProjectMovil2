@@ -14,7 +14,7 @@ namespace FinalProject
 
             if (!string.IsNullOrEmpty(Preferences.Get("MyFirebaseRefreshToken", "")) && Preferences.Get("Level","") == "C")
             {
-                MainPage = new NavigationPage(new ClientPage());
+                MainPage = new NavigationPage(new StartPage());
             }
             else if (!string.IsNullOrEmpty(Preferences.Get("MyFirebaseRefreshToken", "")) && Preferences.Get("Level", "") == "D")
             {
