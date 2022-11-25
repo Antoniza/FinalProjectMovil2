@@ -22,7 +22,7 @@
                                 <RowDefinition Height="Auto"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Frame CornerRadius="5" Padding="5,5" HeightRequest="25">
-                                <SearchBar Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="10" FontSize="12" Placeholder="Buscar..."></SearchBar>
+                                <SearchBar Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="10" FontSize="12" Placeholder="Buscar..." x:Name="SearchBar" TextChanged="SearchBar_TextChanged"></SearchBar>
                             </Frame>
                             <ListView Grid.Row="3" x:Name="UsersListView" ItemsSource="{Binding students}" HasUnevenRows="True" IsRefreshing="True" IsPullToRefreshEnabled="True">
                                 <ListView.ItemTemplate>

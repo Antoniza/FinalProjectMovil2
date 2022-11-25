@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.AdminPage"
              NavigationPage.HasNavigationBar="False">
-    <ContentPage.Content>
+    <AbsoluteLayout  AbsoluteLayout.LayoutFlags="PositionProportional">
         <StackLayout Padding="0">
             <Frame HeightRequest="40" Padding="15, 15" BackgroundColor="{StaticResource colorPrimary}">
                 <Image Source="https://i.ibb.co/0m4SnTC/Hamburger-Menu.png" x:Name="MenuButton" Scale="0.8" HorizontalOptions="End"></Image>
@@ -28,7 +28,7 @@
                             <Image Source="https://i.ibb.co/vhh0Gkj/users.png"></Image>
                             <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                                 <StackLayout>
-                                    <Label Text="Usuarios" x:Name="UserName" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Usuarios" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
                                     <Label Text="Lista de clientes" TextColor="{StaticResource colorFont}" FontSize="12"></Label>
                                 </StackLayout>
                             </Frame>
@@ -81,9 +81,22 @@
                     </Frame>
                 </Grid>
             </ScrollView>
-            <ContentView x:Name="PopUpUser" HeightRequest="250" BackgroundColor="{StaticResource colorPrimary}">
-                
-            </ContentView>
         </StackLayout>
-    </ContentPage.Content>
+        <Frame AbsoluteLayout.LayoutBounds="31, 150, 350, 600" CornerRadius="15" x:Name="PopUpModal">
+            <ScrollView>
+                <AbsoluteLayout>
+                    <Image Source="https://i.ibb.co/dDnmXYB/close.png" Scale="0.6" AbsoluteLayout.LayoutBounds="0, 0, 35,35" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="ClosePopUpModal"></Image>
+                    <Frame Padding="0" HeightRequest="200" WidthRequest="200" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0.5,0,200,200" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        <Image Source="https://i.ibb.co/vhh0Gkj/users.png"></Image>
+                    </Frame>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.4, 300,50" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        <Label x:Name="UserName" Text="NoUserFounded" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="{StaticResource colorBlack}"></Label>
+                        <Label x:Name="UserEmail" Text="NoEmailFounded" HorizontalOptions="CenterAndExpand"></Label>
+                        <Label x:Name="UserPhone" Text="00000000" HorizontalOptions="CenterAndExpand"></Label>
+                    </StackLayout>
+                    <Button Text="LogOut" Command="{Binding LogOutCommand}" BackgroundColor="{StaticResource colorPrimary}" CornerRadius="20" AbsoluteLayout.LayoutBounds="0.5, 1, 100,50" AbsoluteLayout.LayoutFlags="PositionProportional"></Button>
+                </AbsoluteLayout>
+            </ScrollView>
+        </Frame>
+    </AbsoluteLayout>
 </ContentPage>

@@ -29,6 +29,9 @@ namespace FinalProject.Views
             UserButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToUsersPanel()));
 
             MenuButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => OpenModal()));
+            ClosePopUpModal.GestureRecognizers.Add(new TapGestureRecognizer((view) => CloseModal()));
+
+            PopUpModal.IsVisible = false;
         }
 
         public async void GetProfileInformationAndRefreshToken()
@@ -43,6 +46,8 @@ namespace FinalProject.Views
                 Preferences.Set("MyFirebaseRefreshToken", JsonConvert.SerializeObject(RefreshedContent));
                 //Now lets grab user information
                 UserName.Text = Preferences.Get("Username", "UserNoDefined");
+                UserEmail.Text = Preferences.Get("Email", "NoEmailFounded");
+                UserPhone.Text = Preferences.Get("Phone", "00000000");
 
             }
             catch (Exception ex)
@@ -69,7 +74,12 @@ namespace FinalProject.Views
 
         private void OpenModal()
         {
-            Application.Current.MainPage.DisplayAlert("Alerta", "Intenta salir", "OK");
+            PopUpModal.IsVisible = true;
+        }
+
+        private void CloseModal()
+        {
+            PopUpModal.IsVisible = false;
         }
     }
 }

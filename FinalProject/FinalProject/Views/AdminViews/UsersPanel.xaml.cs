@@ -33,5 +33,18 @@ namespace FinalProject.Views.AdminViews
 
         }
 
+        private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var keywords = SearchBar.Text;
+            var UsersList = await UserProvider.GetAllUser();
+            if (string.IsNullOrEmpty(keywords))
+            {
+                UsersListView.ItemsSource = UsersList;
+            }
+            else
+            {
+                UsersListView.ItemsSource = UsersList.Where(Names => Names.Name.ToLower().Contains(keywords.ToLower())).Where(Names => Names.Email.ToLower().Contains(keywords.ToLower()));
+            }
+        }
     }
 }
