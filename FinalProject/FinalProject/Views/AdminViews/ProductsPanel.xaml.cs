@@ -13,6 +13,7 @@ namespace FinalProject.Views.AdminViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductForm : ContentPage
     {
+        [Obsolete]
         public ProductForm()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace FinalProject.Views.AdminViews
             {
                 OnAppearing();
             });
+            AddNewProduct.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToAddProductPanel()));
         }
 
         protected override async void OnAppearing()
@@ -30,6 +32,10 @@ namespace FinalProject.Views.AdminViews
             ProductListView.ItemsSource = ProductsList;
             ProductListView.IsRefreshing = false;
 
+        }
+        void ToAddProductPanel()
+        {
+            Navigation.PushAsync(new AddNewProductPanel());
         }
 
     }

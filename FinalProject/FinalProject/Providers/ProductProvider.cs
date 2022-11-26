@@ -55,7 +55,6 @@ namespace FinalProject.Providers
                 await firebase
                 .Child("Products")
                 .PostAsync(new Products() { Name = name, Price = price, Description = description, Category = category, Image = "Image.png"});
-                await Application.Current.MainPage.DisplayAlert("Satisfactorio", "Nuevo Producto Agregado", "OK");
                 return true;
             }
             catch (Exception e)

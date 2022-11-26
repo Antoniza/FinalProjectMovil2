@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Si7U4EO26HkuKCj7bhylg3cM69gLSThEq7L6AJn0p9HVG1yO68QpK/nyej3eF2cZkxRGztR5eWcBZ1tEubz5Ag==",
+  "dgSpecHash": "IGrhn/S1meEvQegE0kncRYrZYY6T0ibtx8hKwRyNzr/5cqvJv2CjSFyoWfkMpHhlxAw0tuCc6CsGK9AyZs0a+g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject\\FinalProject.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],

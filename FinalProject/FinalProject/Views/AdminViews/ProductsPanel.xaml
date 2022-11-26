@@ -2,6 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.AdminViews.ProductForm">
+    <NavigationPage.TitleView>
+        <Frame IsClippedToBounds="True" BackgroundColor="Transparent">
+            <Label Text="+ Agregar" FontSize="14" TextColor="{StaticResource colorBlack}" HorizontalOptions="End" x:Name="AddNewProduct"></Label>
+        </Frame>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout Padding="15, 15"   BackgroundColor="{StaticResource colorPrimary}">
             <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="15">

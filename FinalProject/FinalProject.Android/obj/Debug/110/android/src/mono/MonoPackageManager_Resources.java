@@ -14,6 +14,7 @@ public class MonoPackageManager_Resources {
 		"LiteDB.dll",
 		"MvvmHelpers.dll",
 		"Newtonsoft.Json.dll",
+		"Plugin.Media.dll",
 		"System.Reactive.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",

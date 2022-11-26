@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/H8SS+yZEg62eJW1xSolunbZ93A4AchJh9FfWL6fMgUJm6w/ccOwzaYLvjt7w57QOu6IUo8PiHzZLeBZYZ/XqA==",
+  "dgSpecHash": "xE3wd0I+bwqYg8uuk91T/Yl04dRfgpEIxRq3cAyzzTKH00oxWAB4OYSklss+wG/pAJFUIKkNmbpU0zyblZkWSQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject.iOS\\FinalProject.iOS.csproj",
   "expectedPackageFiles": [
@@ -61,6 +61,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],

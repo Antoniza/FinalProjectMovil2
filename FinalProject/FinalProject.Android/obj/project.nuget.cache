@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZNUixAVmArs1nuPy19zcd4kE34TILgxo7E8HFbvKHILe52XqBUFY57BWx3KO/DlAwENK8dIFkyfxp3hLaINCXA==",
+  "dgSpecHash": "GnzChMUKWhSfP5YthQf4z3kwlOR609EwnBCVyxEFLxKt3NxeykIw4IVAzSeBwANtIIraMzjtDLhpF5xLZUQdrQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject.Android\\FinalProject.Android.csproj",
   "expectedPackageFiles": [
@@ -61,6 +61,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.activity\\1.1.0.5\\xamarin.androidx.activity.1.1.0.5.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.annotation\\1.1.0.8\\xamarin.androidx.annotation.1.1.0.8.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.annotation.experimental\\1.0.0.8\\xamarin.androidx.annotation.experimental.1.0.0.8.nupkg.sha512",
