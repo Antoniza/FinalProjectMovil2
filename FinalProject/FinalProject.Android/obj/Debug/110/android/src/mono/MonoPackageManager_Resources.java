@@ -7,6 +7,7 @@ public class MonoPackageManager_Resources {
 		"FinalProject.dll",
 		"Firebase.Auth.dll",
 		"Firebase.dll",
+		"Firebase.Storage.dll",
 		"FormsViewGroup.dll",
 		"GalaSoft.MvvmLight.dll",
 		"GalaSoft.MvvmLight.Extras.dll",

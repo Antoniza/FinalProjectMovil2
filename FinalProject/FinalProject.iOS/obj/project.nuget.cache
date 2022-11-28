@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "xE3wd0I+bwqYg8uuk91T/Yl04dRfgpEIxRq3cAyzzTKH00oxWAB4OYSklss+wG/pAJFUIKkNmbpU0zyblZkWSQ==",
+  "dgSpecHash": "A0w2JUzAOXDGH2V6sWK6whX7MNyuCOrxfZF1qNno3pDbiT/unySOpiPuoq//fte7bxd0kcm6GjxiewzrkG8AYA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject.iOS\\FinalProject.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\commonservicelocator\\2.0.2\\commonservicelocator.2.0.2.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\firebaseauthentication.net\\3.7.2\\firebaseauthentication.net.3.7.2.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\firebasedatabase.net\\4.1.0\\firebasedatabase.net.4.1.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\firebasestorage.net\\1.0.3\\firebasestorage.net.1.0.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",

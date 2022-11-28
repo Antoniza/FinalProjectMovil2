@@ -3,10 +3,12 @@ using FinalProject.Views;
 using Firebase.Auth;
 using Firebase.Database;
 using Firebase.Database.Query;
+using Firebase.Storage;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,7 @@ namespace FinalProject.Providers
     {
         private string WebApiKey = "AIzaSyD4MtmT8v3oPcO655V3P0hZ2wRwVcUyZvU";
         public static FirebaseClient firebase = new FirebaseClient("https://store-c5904-default-rtdb.firebaseio.com/");
+        public static FirebaseStorage firebaseStorage = new FirebaseStorage("store-c5904.appspot.com");
         //==============================================================================
 
         //==============================================================================
@@ -54,7 +57,7 @@ namespace FinalProject.Providers
             {
                 await firebase
                 .Child("Products")
-                .PostAsync(new Products() { Name = name, Price = price, Description = description, Category = category, Image = "Image.png"});
+                .PostAsync(new Products() { Name = name, Price = price, Description = description, Category = category, Image = image});
                 return true;
             }
             catch (Exception e)
@@ -103,6 +106,16 @@ namespace FinalProject.Providers
                 {
                 }
             }
+        }
+
+        //==============================================================================
+
+        //==============================================================================
+
+        public static async Task<string> SaveImage(Stream image, string filename)
+        {
+            var img = await firebaseStorage.Child("ProductsImages").Child(filename).PutAsync(image);
+            return img;
         }
     }
 }

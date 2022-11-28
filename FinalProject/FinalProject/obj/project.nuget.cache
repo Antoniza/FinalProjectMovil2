@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "IGrhn/S1meEvQegE0kncRYrZYY6T0ibtx8hKwRyNzr/5cqvJv2CjSFyoWfkMpHhlxAw0tuCc6CsGK9AyZs0a+g==",
+  "dgSpecHash": "a7k4hjf0PVl26r54Y4/y5XMmRNHbkILq7MOJYRdMr13331jw/7QWt6NOxH0F6xzz3ccPfs26yhVhjGHCuaG6wg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Documents\\CLASES\\FinalProjectMovil2\\FinalProject\\FinalProject\\FinalProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\firebaseauthentication.net\\3.7.2\\firebaseauthentication.net.3.7.2.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\firebasedatabase.net\\4.1.0\\firebasedatabase.net.4.1.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\firebasestorage.net\\1.0.3\\firebasestorage.net.1.0.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
