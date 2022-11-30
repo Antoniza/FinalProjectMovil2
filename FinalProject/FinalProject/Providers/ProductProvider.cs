@@ -20,7 +20,7 @@ namespace FinalProject.Providers
     class ProductProvider
     {
         private string WebApiKey = "AIzaSyD4MtmT8v3oPcO655V3P0hZ2wRwVcUyZvU";
-        public static FirebaseClient firebase = new FirebaseClient("https://store-c5904-default-rtdb.firebaseio.com/");
+        public static FirebaseClient firebaseClient = new FirebaseClient("https://store-c5904-default-rtdb.firebaseio.com/");
         public static FirebaseStorage firebaseStorage = new FirebaseStorage("store-c5904.appspot.com");
         //==============================================================================
 
@@ -29,11 +29,12 @@ namespace FinalProject.Providers
         {
             try
             {
-                var productsList = (await firebase
+                var productsList = (await firebaseClient
                 .Child("Products")
                 .OnceAsync<Products>()).Select(item =>
                 new Products
                 {
+                    Id = item.Key,
                     Name = item.Object.Name,
                     Price = item.Object.Price,
                     Category = item.Object.Category,
@@ -55,7 +56,7 @@ namespace FinalProject.Providers
         {
             try
             {
-                await firebase
+                await firebaseClient
                 .Child("Products")
                 .PostAsync(new Products() { Name = name, Price = price, Description = description, Category = category, Image = image});
                 return true;
@@ -69,23 +70,19 @@ namespace FinalProject.Providers
         //==============================================================================
 
         //==============================================================================
-        public static async Task<Products> GetProduct(string productName)
+        public static async Task<List<Products>> GetAllByCategory(string category)
         {
-            try
+            return (await firebaseClient.Child(nameof(Products)).OnceAsync<Products>()).Select(item => new Products
             {
-                var allProducts = await GetAllProducts();
-                await firebase
-                .Child("Products")
-                .OnceAsync<Products>();
-                return allProducts.Where(a => a.Name == productName).FirstOrDefault();
-
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine($"Error:{e}");
-                return null;
-            }
+                Id = item.Key,
+                Name = item.Object.Name,
+                Price = item.Object.Price,
+                Category = item.Object.Category,
+                Description = item.Object.Description,
+                Image = item.Object.Image,
+            }).Where(c => c.Category.ToLower().Contains(category.ToLower())).ToList();
         }
+
 
         //==============================================================================
 
@@ -111,11 +108,36 @@ namespace FinalProject.Providers
         //==============================================================================
 
         //==============================================================================
+        public static async Task<bool> DeleteProduct(string id)
+        {
+            await firebaseClient.Child(nameof(Products) + "/" + id).DeleteAsync();
+            return true;
+        }
+
+        //==============================================================================
+
+        //==============================================================================
+        public static async Task<bool> UpdateProduct(Products product)
+        {
+            await firebaseClient.Child(nameof(Products) + "/" + product.Id).PutAsync(JsonConvert.SerializeObject(product));
+            return true;
+        }
+
+
+        //==============================================================================
+
+        //==============================================================================
 
         public static async Task<string> SaveImage(Stream image, string filename)
         {
             var img = await firebaseStorage.Child("ProductsImages").Child(filename).PutAsync(image);
             return img;
+        }
+
+        public static async Task<bool> DeleteImage(string filename)
+        {
+            await firebaseStorage.Child("ProductsImages").Child(filename).DeleteAsync();
+            return true;
         }
     }
 }

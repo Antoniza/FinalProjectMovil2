@@ -7,7 +7,6 @@
         <StackLayout Padding="0">
             <Frame HeightRequest="40" Padding="15, 15" BackgroundColor="{StaticResource colorPrimary}">
                 <Image Source="https://i.ibb.co/0m4SnTC/Hamburger-Menu.png" x:Name="MenuButton" Scale="0.8" HorizontalOptions="End"></Image>
-                <!--<Button Text="LogOut" Command="{Binding LogOutCommand}" BackgroundColor="{StaticResource colorFont}" CornerRadius="20"></Button>-->
             </Frame>
             <ScrollView>
                 <Grid RowSpacing="20" Padding="15, 15">
@@ -59,7 +58,7 @@
                             <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                                 <StackLayout>
                                     <Label Text="Ventas" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
-                                    <Label Text="Reportes de ventas" FontSize="12" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Aprobaciones de ventas" FontSize="12" TextColor="{StaticResource colorFont}"></Label>
                                 </StackLayout>
                             </Frame>
                         </Grid>

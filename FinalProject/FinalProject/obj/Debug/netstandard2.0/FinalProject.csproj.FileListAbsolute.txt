@@ -46,3 +46,6 @@ C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalPro
 C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject\obj\Debug\netstandard2.0\ref\FinalProject.dll
 C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject\obj\Debug\netstandard2.0\FinalProject.pdb
 C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject\obj\Debug\netstandard2.0\Views\AdminViews\AddNewProductPanel.xaml.g.cs
+C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject\obj\Debug\netstandard2.0\Views\AdminViews\EditProductPanel.xaml.g.cs
+C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject\obj\Debug\netstandard2.0\Views\UserViews\CategorizedProducts.xaml.g.cs
+C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject\obj\Debug\netstandard2.0\Views\UserViews\EditProfile.xaml.g.cs

@@ -57,7 +57,7 @@ namespace FinalProject.Providers
             {
                 await firebase
                 .Child("Users")
-                .PostAsync(new Users() { Name = name, Email = email, Phone = phone , Level = "C", Image = "https://i.ibb.co/vhh0Gkj/users.png" });
+                .PostAsync(new Users() { Name = name, Email = email, Phone = phone , Level = "C", Image = "https://i.ibb.co/vhh0Gkj/users.png", Gender= "", Location= "", Age = "" });
                 return true;
             }
             catch (Exception e)
@@ -115,8 +115,12 @@ namespace FinalProject.Providers
                 Preferences.Set("Email", user.Email);
                 Preferences.Set("Phone", user.Phone);
                 Preferences.Set("Level", user.Level);
+                Preferences.Set("Image", user.Image);
+                Preferences.Set("Gender", user.Gender);
+                Preferences.Set("Location", user.Location);
+                Preferences.Set("Age", user.Age);
 
-                if(user.Level == "C")
+                if (user.Level == "C")
                 {
                     await Application.Current.MainPage.Navigation.PushAsync(new StartPage());
                 }

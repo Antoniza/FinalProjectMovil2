@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FinalProject.Views.UserViews;
 
 namespace FinalProject.Views
 {
@@ -17,12 +18,23 @@ namespace FinalProject.Views
     public partial class StartPage : ContentPage
     {
         private string WebApiKey = "AIzaSyD4MtmT8v3oPcO655V3P0hZ2wRwVcUyZvU";
+
+        [Obsolete]
         public StartPage()
         {
             InitializeComponent();
             BindingContext = new StartViewModel();
 
             GetProfileInformationAndRefreshToken();
+            CloseModal();
+
+            MenuButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => OpenModal()));
+            ClosePopUpModal.GestureRecognizers.Add(new TapGestureRecognizer((view) => CloseModal()));
+
+            MeatCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Carnes")));
+            VegtablesCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Verduras")));
+            DrinksCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Bebidas")));
+            BabiesCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Bebes")));
         }
        
         public async void GetProfileInformationAndRefreshToken()
@@ -37,16 +49,36 @@ namespace FinalProject.Views
                 Preferences.Set("MyFirebaseRefreshToken", JsonConvert.SerializeObject(RefreshedContent));
                 //Now lets grab user information
                 UserName.Text = Preferences.Get("Username", "UserNoDefined");
-
+                UserEmail.Text = Preferences.Get("Email", "NoEmailFounded");
+                UserPhone.Text = Preferences.Get("Phone", "00000000");
+                UserImage.Source = Preferences.Get("Image", "https://i.ibb.co/vhh0Gkj/users.png");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 await Application.Current.MainPage.DisplayAlert("Alerta", "La sesión ya ha terminado", "OK");
             }
+        }
 
+        private void OpenModal()
+        {
+            PopUpModal.IsVisible = true;
+        }
 
+        private void CloseModal()
+        {
+            PopUpModal.IsVisible = false;
+        }
 
+        [Obsolete]
+        private void ToProductsPanel(string category)
+        {
+            Navigation.PushAsync(new CategorizedProducts(category));
+        }
+
+        private void ProfileButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EditProfile());
         }
     }
 }
