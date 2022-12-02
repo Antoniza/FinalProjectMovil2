@@ -133,6 +133,9 @@ namespace FinalProject.Providers
             var img = await firebaseStorage.Child("ProductsImages").Child(filename).PutAsync(image);
             return img;
         }
+        //==============================================================================
+
+        //==============================================================================
 
         public static async Task<bool> DeleteImage(string filename)
         {

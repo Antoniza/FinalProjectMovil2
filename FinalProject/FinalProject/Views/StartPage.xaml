@@ -80,9 +80,9 @@
                         <Label x:Name="UserEmail" Text="NoEmailFounded" HorizontalOptions="CenterAndExpand"></Label>
                         <Label x:Name="UserPhone" Text="00000000" HorizontalOptions="CenterAndExpand"></Label>
                     </StackLayout>
-                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.8, 180,100" AbsoluteLayout.LayoutFlags="PositionProportional">
-                        <Button Text="Actualizar Perfil" BackgroundColor="#25B90A" CornerRadius="20" HorizontalOptions="CenterAndExpand" x:Name="ProfileButton" Clicked="ProfileButton_Clicked"></Button>
-                        <Button Text="Salir" Command="{Binding LogOutCommand}" BackgroundColor="{StaticResource colorPrimary}" CornerRadius="20" HorizontalOptions="CenterAndExpand"></Button>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.8, 190,100" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        <Button Text="Actualizar Perfil" BackgroundColor="#25B90A" CornerRadius="20" HorizontalOptions="CenterAndExpand" x:Name="ProfileButton" Clicked="ProfileButton_Clicked" FontSize="14"></Button>
+                        <Button Text="Salir" Command="{Binding LogOutCommand}" BackgroundColor="{StaticResource colorPrimary}" CornerRadius="20" HorizontalOptions="CenterAndExpand" FontSize="14"></Button>
                     </StackLayout>
                 </AbsoluteLayout>
             </ScrollView>
