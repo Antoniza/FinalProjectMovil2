@@ -111,7 +111,7 @@ namespace FinalProject.Views.UserViews
                 double latitude = Convert.ToDouble(GetLocation.Substring(0, GetLocation.IndexOf(",")));
                 double longitude = Convert.ToDouble(GetLocation.Substring(GetLocation.IndexOf(",")) + 2);
 
-                var placemarks = await Geocoding.GetPlacemarksAsync(latitude, longitude);
+                 var placemarks = await Geocoding.GetPlacemarksAsync(latitude, longitude);
                 var placemark = placemarks?.FirstOrDefault();
 
                 UserLocationText.Text = $" ({placemark.CountryCode}) {placemark.CountryName}, {placemark.AdminArea}, {placemark.Locality}";

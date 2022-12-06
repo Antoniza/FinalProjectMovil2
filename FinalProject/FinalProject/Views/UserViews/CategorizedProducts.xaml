@@ -58,23 +58,29 @@
                 </StackLayout>
             </Frame>
         </StackLayout>
-        <Frame AbsoluteLayout.LayoutBounds="31, 120, 350, 600" CornerRadius="15" x:Name="PopUpModal">
+        <Frame AbsoluteLayout.LayoutBounds="31, 50, 350, 700" CornerRadius="15" x:Name="PopUpModal">
             <ScrollView>
-                <AbsoluteLayout>
-                    <Image Source="https://i.ibb.co/dDnmXYB/close.png" Scale="0.6" AbsoluteLayout.LayoutBounds="0, 0, 35,35" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="ClosePopUpModal"></Image>
-                    <Frame Padding="0" HeightRequest="300" WidthRequest="300" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0.5,0.1,300,300" AbsoluteLayout.LayoutFlags="PositionProportional">
-                        <Image Source="https://i.ibb.co/vhh0Gkj/users.png" x:Name="ProductDetailImage"></Image>
-                    </Frame>
-                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.69, 300,50" AbsoluteLayout.LayoutFlags="PositionProportional">
-                        <Label x:Name="ProductDetailName" Text="NoUserFounded" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="{StaticResource colorBlack}"></Label>
-                        <Label x:Name="ProductDetailDescription" Text="NoEmailFounded" HorizontalOptions="CenterAndExpand"></Label>
-                        <Label x:Name="ProductDetailPrice" Text="00000000" HorizontalOptions="CenterAndExpand"></Label>
+                <ContentView>
+                    <StackLayout>
+                        <Frame Padding="0" HeightRequest="300" WidthRequest="300" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True">
+                            <Image Source="https://i.ibb.co/vhh0Gkj/users.png" x:Name="ProductDetailImage"></Image>
+                        </Frame>
+                        <StackLayout>
+                            <Label x:Name="ProductDetailName" Text="NoUserFound" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="{StaticResource colorBlack}"></Label>
+                            <Label x:Name="ProductDetailId" Text="ID" HorizontalOptions="CenterAndExpand" FontSize="8"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label x:Name="ProductDetailPrice" Text="00000000" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"></Label>
+                            <Entry x:Name="PoundAndUnityText" Keyboard="Numeric" WidthRequest="80" Text="1" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"></Entry>
+                            <Label Text="Lbs/U" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"></Label>
+                        </StackLayout>
+                        <Label x:Name="ProductDetailDescription" Text="NoDescriptionFound" HorizontalOptions="CenterAndExpand"></Label>
+                        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Button Text="Cancelar" x:Name="CancelBuyButton" BackgroundColor="#25B90A" CornerRadius="20" Clicked="CancelBuyButton_Clicked"></Button>
+                            <Button Text="Comprar" x:Name="BuyButton" BackgroundColor="#25B90A" CornerRadius="20" Clicked="BuyButton_Clicked"></Button>
+                        </StackLayout>
                     </StackLayout>
-                    <Label x:Name="ProductDetailId" Text="ID" HorizontalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0.5, 0.95, 300,80" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
-                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 1, 100,50" AbsoluteLayout.LayoutFlags="PositionProportional" Orientation="Horizontal">
-                        <Button Text="Comprar" x:Name="UpdateButton" BackgroundColor="#25B90A" CornerRadius="20"></Button>
-                    </StackLayout>
-                </AbsoluteLayout>
+                </ContentView>
             </ScrollView>
         </Frame>
     </AbsoluteLayout>

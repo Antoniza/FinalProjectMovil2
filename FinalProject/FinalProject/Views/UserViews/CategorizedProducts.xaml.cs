@@ -1,11 +1,12 @@
 ﻿using FinalProject.Models;
 using FinalProject.Providers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,8 +23,6 @@ namespace FinalProject.Views.UserViews
         {
             InitializeComponent();
 
-            ClosePopUpModal.GestureRecognizers.Add(new TapGestureRecognizer((view) => CloseModal()));
-
             category = _category;
             ProductListView.RefreshCommand = new Command(() =>
             {
@@ -38,7 +37,6 @@ namespace FinalProject.Views.UserViews
             ProductListView.ItemsSource = null;
             ProductListView.ItemsSource = ProductsList;
             ProductListView.IsRefreshing = false;
-
         }
 
         private void ProductListView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -46,11 +44,12 @@ namespace FinalProject.Views.UserViews
             var product = e.Item as Products;
             ProductDetailName.Text = product.Name;
             ProductDetailDescription.Text = product.Description;
-            ProductDetailPrice.Text = product.Price + " Lps";
             ProductDetailId.Text = product.Id;
             ProductDetailImage.Source = product.Image;
 
             selectedProduct = product;
+
+            ProductDetailPrice.Text = product.Price + " Lps";
 
             PopUpModal.IsVisible = true;
         }
@@ -76,6 +75,35 @@ namespace FinalProject.Views.UserViews
             {
                 ProductListView.ItemsSource = ProductList.Where(Names => Names.Name.ToLower().Contains(keywords.ToLower()));
             }
+        }
+
+        private void CancelBuyButton_Clicked(object sender, EventArgs e)
+        {
+            CloseModal();
+        }
+
+        private void PoundAndUnityText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var actual = ProductDetailPrice.Text;
+            ProductDetailPrice.Text = Convert.ToString((Convert.ToDouble(actual) * Convert.ToDouble(PoundAndUnityText.Text)) + " Lps");
+        }
+
+        private void BuyButton_Clicked(object sender, EventArgs e)
+        {
+            List < Shopping > car = new List<Shopping>();
+            var newShop = new Shopping
+            {
+                Image = selectedProduct.Image,
+                ProductName = selectedProduct.Name,
+
+                Quantity = PoundAndUnityText.Text + " Lbs/U"
+            };
+
+            car.Add(newShop);
+
+            String shoppingCar = JsonConvert.SerializeObject(car);
+
+            Preferences.Set("ShoppingCar", shoppingCar);
         }
     }
 }
