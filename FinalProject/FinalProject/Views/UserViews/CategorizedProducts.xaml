@@ -62,22 +62,35 @@
             <ScrollView>
                 <ContentView>
                     <StackLayout>
-                        <Frame Padding="0" HeightRequest="300" WidthRequest="300" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True">
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <Image Source="https://i.ibb.co/dDnmXYB/close.png" HeightRequest="22" x:Name="ClosePopUpModal"></Image>
+                            <Label x:Name="ProductDetailName" Text="NoProductNameFound" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="{StaticResource colorBlack}"></Label>
+                        </StackLayout>
+                        <Frame Padding="0" HeightRequest="400" WidthRequest="400" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" Margin="0,15,0,0" BackgroundColor="{StaticResource colorBackImage}">
                             <Image Source="https://i.ibb.co/vhh0Gkj/users.png" x:Name="ProductDetailImage"></Image>
                         </Frame>
                         <StackLayout>
-                            <Label x:Name="ProductDetailName" Text="NoUserFound" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="{StaticResource colorBlack}"></Label>
                             <Label x:Name="ProductDetailId" Text="ID" HorizontalOptions="CenterAndExpand" FontSize="8"></Label>
                         </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label x:Name="ProductDetailPrice" Text="00000000" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"></Label>
-                            <Entry x:Name="PoundAndUnityText" Keyboard="Numeric" WidthRequest="80" Text="1" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"></Entry>
+                        <StackLayout Orientation="Horizontal" Spacing="1" Margin="0,30,0,0">
+                            <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
+                            <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
+                            <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
+                            <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
+                            <Image Source="https://i.ibb.co/R3YVH2c/star-empty.png" WidthRequest="30"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="1" Margin="0,20,0,0">
+                            <StackLayout Orientation="Horizontal">
+                                <Label x:Name="ProductDetailPrice" Text="00.00" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="19" FontAttributes="Bold" TextColor="{StaticResource colorPrimary}"></Label>
+                                <Label Text="Lps" HorizontalOptions="Start" VerticalOptions="EndAndExpand" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource colorPrimary}"></Label>
+                            </StackLayout>
+                            <Entry x:Name="PoundAndUnityText" Keyboard="Numeric" WidthRequest="80" Text="1" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Completed="PoundAndUnityText_Completed"></Entry>
                             <Label Text="Lbs/U" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"></Label>
                         </StackLayout>
-                        <Label x:Name="ProductDetailDescription" Text="NoDescriptionFound" HorizontalOptions="CenterAndExpand"></Label>
-                        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                            <Button Text="Cancelar" x:Name="CancelBuyButton" BackgroundColor="#25B90A" CornerRadius="20" Clicked="CancelBuyButton_Clicked"></Button>
-                            <Button Text="Comprar" x:Name="BuyButton" BackgroundColor="#25B90A" CornerRadius="20" Clicked="BuyButton_Clicked"></Button>
+                        <Label x:Name="ProductDetailDescription" Text="NoDescriptionFound" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0"></Label>
+                        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20" Margin="0,50,0,0">
+                            <Button Text="Agregar a carrito" x:Name="BuyButton" BackgroundColor="#25B90A" CornerRadius="5" FontSize="12" Clicked="BuyButton_Clicked"></Button>
+                            <Image Source="https://i.ibb.co/NtJjv5z/like.png" Scale="3" WidthRequest="15" x:Name="LikeButton"></Image>
                         </StackLayout>
                     </StackLayout>
                 </ContentView>

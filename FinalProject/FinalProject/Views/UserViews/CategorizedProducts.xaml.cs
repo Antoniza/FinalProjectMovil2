@@ -29,6 +29,14 @@ namespace FinalProject.Views.UserViews
                 OnAppearing();
             });
             CloseModal();
+
+            ClosePopUpModal.GestureRecognizers.Add(new TapGestureRecognizer((view) => CloseModal()));
+            LikeButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => LikeMessage()));
+        }
+
+        private void LikeMessage()
+        {
+            DisplayAlert("Calificación", "Gracias por marcar este producto como favorito.", "Un Placer");
         }
 
         protected override async void OnAppearing()
@@ -52,6 +60,7 @@ namespace FinalProject.Views.UserViews
             ProductDetailPrice.Text = product.Price + " Lps";
 
             PopUpModal.IsVisible = true;
+
         }
         private void OpenModal()
         {
@@ -61,6 +70,7 @@ namespace FinalProject.Views.UserViews
         private void CloseModal()
         {
             PopUpModal.IsVisible = false;
+            PoundAndUnityText.Text = "1";
         }
 
         private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
@@ -90,20 +100,54 @@ namespace FinalProject.Views.UserViews
 
         private void BuyButton_Clicked(object sender, EventArgs e)
         {
-            List < Shopping > car = new List<Shopping>();
-            var newShop = new Shopping
+
+            if(Preferences.Get("ShoppingCar", "") == "")
             {
-                Image = selectedProduct.Image,
-                ProductName = selectedProduct.Name,
+                List<Shopping> car = new List<Shopping>();
+                var newShop = new Shopping
+                {
+                    Image = selectedProduct.Image,
+                    ProductName = selectedProduct.Name,
+                    TotalShop = ProductDetailPrice.Text,
+                    Quantity = PoundAndUnityText.Text
+                };
 
-                Quantity = PoundAndUnityText.Text + " Lbs/U"
-            };
+                car.Add(newShop);
 
-            car.Add(newShop);
+                String shoppingCar = JsonConvert.SerializeObject(car);
 
-            String shoppingCar = JsonConvert.SerializeObject(car);
+                Preferences.Set("ShoppingCar", shoppingCar);
 
-            Preferences.Set("ShoppingCar", shoppingCar);
+            }
+            else
+            {
+                String list = Preferences.Get("ShoppingCar", "");
+                var items = JsonConvert.DeserializeObject<List<Shopping>>(list);
+                List<Shopping> car = new List<Shopping>();
+                for (int i = 0; i < items.Count(); i++)
+                {
+                    car.Add(items[i]);
+                }
+
+                var newShop = new Shopping
+                {
+                    Image = selectedProduct.Image,
+                    ProductName = selectedProduct.Name,
+                    TotalShop = ProductDetailPrice.Text,
+                    Quantity = PoundAndUnityText.Text
+                };
+
+                car.Add(newShop);
+                String shoppingCar = JsonConvert.SerializeObject(car);
+
+                Preferences.Set("ShoppingCar", shoppingCar);
+            }
+            DisplayAlert("Listo", $"Se agrego {selectedProduct.Name} al carrito.", "OK");
+        }
+
+        private void PoundAndUnityText_Completed(object sender, EventArgs e)
+        {
+            ProductDetailPrice.Text = Convert.ToString((Convert.ToDouble(selectedProduct.Price) * Convert.ToDouble(PoundAndUnityText.Text)) + " Lps");
         }
     }
 }

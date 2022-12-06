@@ -77,10 +77,21 @@
                     </Frame>
                     <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.4, 300,50" AbsoluteLayout.LayoutFlags="PositionProportional">
                         <Label x:Name="UserName" Text="NoUserFounded" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="{StaticResource colorBlack}"></Label>
-                        <Label x:Name="UserEmail" Text="NoEmailFounded" HorizontalOptions="CenterAndExpand"></Label>
-                        <Label x:Name="UserPhone" Text="00000000" HorizontalOptions="CenterAndExpand"></Label>
+                        <Label x:Name="UserEmail" Text="NoEmailFounded" HorizontalOptions="CenterAndExpand" FontSize="10"></Label>
+                        <Label x:Name="UserPhone" Text="00000000" HorizontalOptions="CenterAndExpand" FontSize="10"></Label>
                     </StackLayout>
-                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.8, 190,100" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.7, 180,50" AbsoluteLayout.LayoutFlags="PositionProportional" Orientation="Horizontal" Spacing="15">
+                        <Frame HeightRequest="15" WidthRequest="15" BackgroundColor="AliceBlue">
+                            <Image Source="https://i.ibb.co/rbgYcbW/info.png" Scale="3.9" x:Name="ToInfoPageButton"></Image>
+                        </Frame>
+                        <Frame HeightRequest="15" WidthRequest="15" BackgroundColor="AliceBlue">
+                            <Image Source="https://i.ibb.co/jM877qK/shopping-car.png" Scale="3.9" x:Name="ToShoppingListButton"></Image>
+                        </Frame>
+                        <Frame HeightRequest="15" WidthRequest="15" BackgroundColor="AliceBlue">
+                            <Image Source="https://i.ibb.co/WGTMFP4/history.png" Scale="3.9" x:Name="ToHistoryPageButton"></Image>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.98, 190,100" AbsoluteLayout.LayoutFlags="PositionProportional">
                         <Button Text="Actualizar Perfil" BackgroundColor="#25B90A" CornerRadius="20" HorizontalOptions="CenterAndExpand" x:Name="ProfileButton" Clicked="ProfileButton_Clicked" FontSize="14"></Button>
                         <Button Text="Salir" Command="{Binding LogOutCommand}" BackgroundColor="{StaticResource colorPrimary}" CornerRadius="20" HorizontalOptions="CenterAndExpand" FontSize="14"></Button>
                     </StackLayout>

@@ -35,8 +35,27 @@ namespace FinalProject.Views
             VegtablesCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Verduras")));
             DrinksCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Bebidas")));
             BabiesCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Bebes")));
+
+            ToHistoryPageButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToHistoryPage()));
+            ToInfoPageButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToInfoPage()));
+            ToShoppingListButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToShoppingList()));
         }
-       
+
+        private void ToShoppingList()
+        {
+            Navigation.PushAsync(new ShoppingListPage());
+        }
+
+        private void ToInfoPage()
+        {
+            Navigation.PushAsync(new InformationPage());
+        }
+
+        private void ToHistoryPage()
+        {
+            Navigation.PushAsync(new HistoryPage());
+        }
+
         public async void GetProfileInformationAndRefreshToken()
         {
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(WebApiKey));

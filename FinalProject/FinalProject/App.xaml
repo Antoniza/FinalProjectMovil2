@@ -11,6 +11,9 @@
         <Color x:Key="colorFont">#FFFFFF</Color>
         <Color x:Key="colorShadows">#888</Color>
         <Color x:Key="colorBlack">#000</Color>
+        
+        <Color x:Key="colorCancel">#EE2B08</Color>
+        <Color x:Key="colorBackImage">#F7F7F7</Color>
         <!--#endregion-->
     </Application.Resources>
 </Application>
