@@ -52,3 +52,4 @@ C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalPro
 C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject\obj\Debug\netstandard2.0\Views\UserViews\HistoryPage.xaml.g.cs
 C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject\obj\Debug\netstandard2.0\Views\UserViews\InformationPage.xaml.g.cs
 C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject\obj\Debug\netstandard2.0\Views\UserViews\ShoppingListPage.xaml.g.cs
+C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject\obj\Debug\netstandard2.0\Views\UserViews\BuyDetailPage.xaml.g.cs

@@ -72,20 +72,26 @@
                         <StackLayout>
                             <Label x:Name="ProductDetailId" Text="ID" HorizontalOptions="CenterAndExpand" FontSize="8"></Label>
                         </StackLayout>
-                        <StackLayout Orientation="Horizontal" Spacing="1" Margin="0,30,0,0">
-                            <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
-                            <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
-                            <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
-                            <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
-                            <Image Source="https://i.ibb.co/R3YVH2c/star-empty.png" WidthRequest="30"></Image>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal" Spacing="1" Margin="0,20,0,0">
-                            <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical" Spacing="1" Margin="0,20,0,0">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="15">
+                                <Button Text="-" x:Name="Drop" Clicked="Drop_Clicked" WidthRequest="45" CornerRadius="50"></Button>
+                                <Label Text="1" x:Name="PoundAndUnityText" VerticalOptions="CenterAndExpand"></Label>
+                                <Button Text="+" x:Name="Add" Clicked="Add_Clicked" WidthRequest="45" CornerRadius="50"></Button>
+                            </StackLayout>
+                            <Label Text="Lbs/U" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                                 <Label x:Name="ProductDetailPrice" Text="00.00" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="19" FontAttributes="Bold" TextColor="{StaticResource colorPrimary}"></Label>
                                 <Label Text="Lps" HorizontalOptions="Start" VerticalOptions="EndAndExpand" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource colorPrimary}"></Label>
                             </StackLayout>
-                            <Entry x:Name="PoundAndUnityText" Keyboard="Numeric" WidthRequest="80" Text="1" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Completed="PoundAndUnityText_Completed"></Entry>
-                            <Label Text="Lbs/U" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"></Label>
+
+                            <StackLayout Orientation="Horizontal" Spacing="1" Margin="0,30,0,0">
+                                <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
+                                <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
+                                <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
+                                <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
+                                <Image Source="https://i.ibb.co/R3YVH2c/star-empty.png" WidthRequest="30"></Image>
+                            </StackLayout>
                         </StackLayout>
                         <Label x:Name="ProductDetailDescription" Text="NoDescriptionFound" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0"></Label>
                         <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20" Margin="0,50,0,0">

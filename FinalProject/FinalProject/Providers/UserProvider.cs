@@ -40,7 +40,8 @@ namespace FinalProject.Providers
                     Phone = item.Object.Phone,
                     Image = item.Object.Image,
                     Level = item.Object.Level,
-                    Location = item.Object.Location,
+                    Latitude = item.Object.Latitude,
+                    Longitude = item.Object.Longitude,
                     Gender = item.Object.Gender,
                     Age = item.Object.Age
                 }).ToList();
@@ -61,7 +62,7 @@ namespace FinalProject.Providers
             {
                 await firebase
                 .Child("Users")
-                .PostAsync(new Users() { Name = name, Email = email, Phone = phone , Level = "C", Image = "https://i.ibb.co/vhh0Gkj/users.png", Gender= "", Location= "", Age = "" });
+                .PostAsync(new Users() { Name = name, Email = email, Phone = phone , Level = "C", Image = "https://i.ibb.co/vhh0Gkj/users.png", Gender= "", Latitude= "", Longitude="", Age = "" });
                 return true;
             }
             catch (Exception e)
@@ -131,7 +132,8 @@ namespace FinalProject.Providers
                 Preferences.Set("Level", user.Level);
                 Preferences.Set("Image", user.Image);
                 Preferences.Set("Gender", user.Gender);
-                Preferences.Set("Location", user.Location);
+                Preferences.Set("Latitude", user.Latitude);
+                Preferences.Set("Longitude", user.Longitude);
                 Preferences.Set("Age", user.Age);
 
                 if (user.Level == "C")
@@ -154,6 +156,7 @@ namespace FinalProject.Providers
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Fallo de sesión", "Correo o contraseña incorrectas.", "OK");
+                await Application.Current.MainPage.DisplayAlert("Fallo de sesión", ex.Message, "OK");
             }
         }
         //==============================================================================
@@ -211,10 +214,12 @@ namespace FinalProject.Providers
             Preferences.Remove("MyFirebaseRefreshToken");
             Preferences.Remove("Username");
             Preferences.Remove("Email");
+            Preferences.Remove("Image");
             Preferences.Remove("Level");
             Preferences.Remove("Phone");
             Preferences.Remove("Gender");
-            Preferences.Remove("Location");
+            Preferences.Remove("Latitude");
+            Preferences.Remove("Longitude");
             Preferences.Remove("Age");
             Application.Current.MainPage = new NavigationPage(new LoginPage());
         }

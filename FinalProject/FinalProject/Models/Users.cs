@@ -13,7 +13,8 @@ namespace FinalProject.Models
         public string Image { get; set; }
         public string Level { get; set; }
         public string Gender { get; set; }
-        public string Location { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
         public string Age { get; set; }
     }
 }

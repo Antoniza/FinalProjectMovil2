@@ -13,7 +13,7 @@
             <StackLayout Spacing="25" Margin="0,30,0,0">
                 <Entry Placeholder="Nombre completo" TextColor="#000" x:Name="UserNameText"></Entry>
                 <Entry Placeholder="Telefono" Keyboard="Numeric" TextColor="#000" x:Name="UserPhoneText"></Entry>
-                <Entry Placeholder="Correo" TextColor="#000" x:Name="UserEmailText"></Entry>
+                <Entry Placeholder="Correo" TextColor="#000" x:Name="UserEmailText" IsReadOnly="True"></Entry>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                     <Picker Title="Genero" FontSize="18" TextColor="#000" x:Name="GenderPicker" WidthRequest="250">
                         <Picker.Items>
@@ -27,7 +27,8 @@
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                     <StackLayout>
                         <Entry Placeholder="Ubicación" TextColor="#000" x:Name="UserLocationText" IsReadOnly="True" WidthRequest="250"></Entry>
-                        <Label Text="Latitud, Longitud" FontSize="8" x:Name="LocationCord"></Label>
+                        <Label Text="Latitud" FontSize="8" x:Name="LatitudeCord"></Label>
+                        <Label Text="Longitud" FontSize="8" x:Name="LongitudeCord"></Label>
                     </StackLayout>
                     <Image Source="https://i.ibb.co/gV8hNCt/Find.png" Scale="0.6" x:Name="GetLocationButton" WidthRequest="65"></Image>
                 </StackLayout>

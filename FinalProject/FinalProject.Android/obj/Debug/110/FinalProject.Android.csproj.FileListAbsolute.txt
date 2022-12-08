@@ -1258,3 +1258,4 @@ C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalPro
 C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\android\assets\Firebase.Storage.dll
 C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\android\assets\System.IO.dll
 C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\android\assets\System.Runtime.Extensions.dll
+C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\res\xml\file_paths.xml

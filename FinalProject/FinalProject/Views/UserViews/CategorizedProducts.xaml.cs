@@ -57,7 +57,7 @@ namespace FinalProject.Views.UserViews
 
             selectedProduct = product;
 
-            ProductDetailPrice.Text = product.Price + " Lps";
+            ProductDetailPrice.Text = product.Price;
 
             PopUpModal.IsVisible = true;
 
@@ -95,7 +95,7 @@ namespace FinalProject.Views.UserViews
         private void PoundAndUnityText_TextChanged(object sender, TextChangedEventArgs e)
         {
             var actual = ProductDetailPrice.Text;
-            ProductDetailPrice.Text = Convert.ToString((Convert.ToDouble(actual) * Convert.ToDouble(PoundAndUnityText.Text)) + " Lps");
+            ProductDetailPrice.Text = Convert.ToString((Convert.ToDouble(actual) * Convert.ToDouble(PoundAndUnityText.Text)));
         }
 
         private void BuyButton_Clicked(object sender, EventArgs e)
@@ -106,8 +106,10 @@ namespace FinalProject.Views.UserViews
                 List<Shopping> car = new List<Shopping>();
                 var newShop = new Shopping
                 {
+                    Id = selectedProduct.Id,
                     Image = selectedProduct.Image,
                     ProductName = selectedProduct.Name,
+                    PoundUnityPrice = selectedProduct.Price,
                     TotalShop = ProductDetailPrice.Text,
                     Quantity = PoundAndUnityText.Text
                 };
@@ -131,8 +133,10 @@ namespace FinalProject.Views.UserViews
 
                 var newShop = new Shopping
                 {
+                    Id = selectedProduct.Id,
                     Image = selectedProduct.Image,
                     ProductName = selectedProduct.Name,
+                    PoundUnityPrice = selectedProduct.Price,
                     TotalShop = ProductDetailPrice.Text,
                     Quantity = PoundAndUnityText.Text
                 };
@@ -145,9 +149,21 @@ namespace FinalProject.Views.UserViews
             DisplayAlert("Listo", $"Se agrego {selectedProduct.Name} al carrito.", "OK");
         }
 
-        private void PoundAndUnityText_Completed(object sender, EventArgs e)
+        private void TotalPrice()
         {
-            ProductDetailPrice.Text = Convert.ToString((Convert.ToDouble(selectedProduct.Price) * Convert.ToDouble(PoundAndUnityText.Text)) + " Lps");
+            ProductDetailPrice.Text = Convert.ToString((Convert.ToDouble(selectedProduct.Price) * Convert.ToDouble(PoundAndUnityText.Text)));
+        }
+
+        private void Add_Clicked(object sender, EventArgs e)
+        {
+            PoundAndUnityText.Text = Convert.ToString(Convert.ToDouble(PoundAndUnityText.Text) + 1);
+            TotalPrice();
+        }
+
+        private void Drop_Clicked(object sender, EventArgs e)
+        {
+            PoundAndUnityText.Text = Convert.ToString(Convert.ToDouble(PoundAndUnityText.Text) - 1);
+            TotalPrice();
         }
     }
 }

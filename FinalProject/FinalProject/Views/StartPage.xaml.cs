@@ -44,16 +44,19 @@ namespace FinalProject.Views
         private void ToShoppingList()
         {
             Navigation.PushAsync(new ShoppingListPage());
+            CloseModal();
         }
 
         private void ToInfoPage()
         {
             Navigation.PushAsync(new InformationPage());
+            CloseModal();
         }
 
         private void ToHistoryPage()
         {
             Navigation.PushAsync(new HistoryPage());
+            CloseModal();
         }
 
         public async void GetProfileInformationAndRefreshToken()
@@ -98,6 +101,7 @@ namespace FinalProject.Views
         private void ProfileButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new EditProfile());
+            CloseModal();
         }
     }
 }

@@ -26,6 +26,7 @@ com.google.android.material.tabs.TabLayout;C:\Users\Administrator\Documents\CLAS
 com.google.android.material.tabs.TabLayout;C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\lp\47\jl\res\layout\tabbar.xml
 declare-styleable;C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\lp\47\jl\res\values\attrs.xml
 external-cache-path;C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\lp\46\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-files-path;obj\Debug\110\res\xml\file_paths.xml
 external-path;C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\lp\46\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\eleconomico_ico.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\icon.xml
@@ -37,6 +38,7 @@ item;obj\Debug\110\res\values\styles.xml
 layer-list;obj\Debug\110\res\drawable\splashscreen.xml
 LinearLayout;C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\lp\47\jl\res\layout\bottomtablayout.xml
 paths;C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\lp\46\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+paths;obj\Debug\110\res\xml\file_paths.xml
 resources;C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\lp\47\jl\res\values\attrs.xml
 resources;C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\lp\47\jl\res\values\strings.xml
 resources;C:\Users\Administrator\Documents\CLASES\FinalProjectMovil2\FinalProject\FinalProject.Android\obj\Debug\110\lp\47\jl\res\values\styles.xml

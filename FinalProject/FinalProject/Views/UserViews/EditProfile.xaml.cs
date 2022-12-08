@@ -59,7 +59,7 @@ namespace FinalProject.Views.UserViews
             GenderPicker.Title = Preferences.Get("Gender", "Seleccione su genero");
             UserAgeText.Text = Preferences.Get("Age", "");
 
-            if (Preferences.Get("Location", "") == "")
+            if (Preferences.Get("Latitude", "") == "" || Preferences.Get("Longitude", "") == "")
             {
                 GetCurrentLocationAndApply();
             }
@@ -82,7 +82,8 @@ namespace FinalProject.Views.UserViews
                     var placemark = placemarks?.FirstOrDefault();
 
                     UserLocationText.Text = $" ({placemark.CountryCode}) {placemark.CountryName}, {placemark.AdminArea}, {placemark.Locality}";
-                    LocationCord.Text = $"{location.Latitude}, {location.Longitude}";
+                    LatitudeCord.Text = $"{location.Latitude}";
+                    LongitudeCord.Text = $"{location.Longitude}";
                 }
             }
             catch (FeatureNotSupportedException fnsEx)
@@ -107,31 +108,19 @@ namespace FinalProject.Views.UserViews
         {
             try
             {
-                string GetLocation = Preferences.Get("Location", "");
-                double latitude = Convert.ToDouble(GetLocation.Substring(0, GetLocation.IndexOf(",")));
-                double longitude = Convert.ToDouble(GetLocation.Substring(GetLocation.IndexOf(",")) + 2);
+                double latitude = Convert.ToDouble(Preferences.Get("Latitude", ""));
+                double longitude = Convert.ToDouble(Preferences.Get("Longitude", ""));
 
                  var placemarks = await Geocoding.GetPlacemarksAsync(latitude, longitude);
                 var placemark = placemarks?.FirstOrDefault();
 
                 UserLocationText.Text = $" ({placemark.CountryCode}) {placemark.CountryName}, {placemark.AdminArea}, {placemark.Locality}";
-                LocationCord.Text = Preferences.Get("Location", "");
-            }
-            catch (FeatureNotSupportedException fnsEx)
-            {
-                // Handle not supported on device exception
-            }
-            catch (FeatureNotEnabledException fneEx)
-            {
-                // Handle not enabled on device exception
-            }
-            catch (PermissionException pEx)
-            {
-                // Handle permission exception
+                LatitudeCord.Text = Preferences.Get("Latitude", "");
+                LongitudeCord.Text = Preferences.Get("Longitude", "");
             }
             catch (Exception ex)
             {
-                // Unable to get location
+                await DisplayAlert("No ubicacionb", ex.Message, "OK");
             }
         }
 
@@ -246,8 +235,6 @@ namespace FinalProject.Views.UserViews
                     return;
                 }
 
-                await DisplayAlert("File location", file.Path, "OK");
-
                 UserImage.Source = ImageSource.FromStream(() =>
                 {
                     ImageEdited = true;
@@ -255,7 +242,7 @@ namespace FinalProject.Views.UserViews
                 });
             }catch(Exception e)
             {
-                DisplayAlert("Error", e.Message, "OK");
+                await DisplayAlert("Error", e.Message, "OK");
             }
         }
 
@@ -265,7 +252,7 @@ namespace FinalProject.Views.UserViews
 
             if(res)
             {
-                GetCurrentLocationAndApply();
+                await GetCurrentLocationAndApply();
                 CloseModal();
             }
             else
@@ -299,7 +286,7 @@ namespace FinalProject.Views.UserViews
             }
             else
             {
-                Gender = "";
+                Gender = Preferences.Get("Gender", "");
             }
 
             Users dataUpdate = new Users()
@@ -309,18 +296,19 @@ namespace FinalProject.Views.UserViews
                 Email = UserEmailText.Text,
                 Image = NewUserImage,
                 Level = "C",
-                Location = LocationCord.Text,
+                Latitude = LatitudeCord.Text,
+                Longitude = LongitudeCord.Text,
                 Phone = UserPhoneText.Text,
                 Age = UserAgeText.Text,
                 Gender = Gender
             };
-
             Preferences.Set("Username", UserNameText.Text);
             Preferences.Set("Email", UserEmailText.Text);
             Preferences.Set("Phone", UserPhoneText.Text);
             Preferences.Set("Image", NewUserImage);
             Preferences.Set("Gender", Gender);
-            Preferences.Set("Location", LocationCord.Text);
+            Preferences.Set("Latitude", LatitudeCord.Text);
+            Preferences.Set("Longitude", LongitudeCord.Text);
             Preferences.Set("Age", UserAgeText.Text);
 
             bool res = await UserProvider.UpdateUser(dataUpdate);
@@ -328,7 +316,8 @@ namespace FinalProject.Views.UserViews
             if (res)
             {
                 await Application.Current.MainPage.DisplayAlert("Satisfactorio", "Perfil actualizado satisfactoriamente.", "OK");
-                Navigation.PopAsync();
+
+                await Navigation.PushAsync(new StartPage());
             }
             else
             {
