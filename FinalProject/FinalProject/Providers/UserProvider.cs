@@ -156,7 +156,6 @@ namespace FinalProject.Providers
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Fallo de sesión", "Correo o contraseña incorrectas.", "OK");
-                await Application.Current.MainPage.DisplayAlert("Fallo de sesión", ex.Message, "OK");
             }
         }
         //==============================================================================

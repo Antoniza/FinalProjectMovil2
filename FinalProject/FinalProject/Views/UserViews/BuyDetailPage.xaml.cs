@@ -26,7 +26,7 @@ namespace FinalProject.Views.UserViews
         {
             ClientName.Text = Preferences.Get("Username", "");
             ClientPhone.Text = Preferences.Get("Phone", "");
-
+            DateTimeText.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
             String list = Preferences.Get("ShoppingCar", "");
             var ShoppingList = JsonConvert.DeserializeObject<List<Shopping>>(list);
 
@@ -127,19 +127,19 @@ namespace FinalProject.Views.UserViews
                 }
                 else
                 {
-                    if(Preferences.Get("ShoppingCar","") == "")
+                    if (Preferences.Get("ShoppingCar", "") == "")
                     {
                         await DisplayAlert("Error", "La lista de compras esta vacía.", "Entendido");
                     }
                     else
                     {
-                        if(payWay == "Tarjeta (Proximamente)")
+                        if (payWay == "Tarjeta (Proximamente)")
                         {
                             await DisplayAlert("Alerta", "El metodo de pago de tarjetas no ha sido implementado todavía.\nSeleccione otra forma de pago.", "Entendido");
                         }
                         else
                         {
-                            Sale newSale = new Sale()
+                            Sales newSale = new Sales()
                             {
                                 ClientName = ClientName.Text,
                                 ClientMail = Preferences.Get("Email", ""),
@@ -147,9 +147,11 @@ namespace FinalProject.Views.UserViews
                                 ClientLatitude = Latitude.Text,
                                 ClientLongitude = Longitude.Text,
                                 Detail = SendDetails.Text,
+                                Date = DateTimeText.Text,
                                 TotalToPay = TotalToPay.Text,
                                 PayFormat = payWay,
-                                ShoppingCar = Preferences.Get("ShoppingCar", "")
+                                ShoppingCar = Preferences.Get("ShoppingCar", ""),
+                                State = "Pendiente"
                             };
 
                             bool res = await SalesProvider.AddSale(newSale);
@@ -158,7 +160,7 @@ namespace FinalProject.Views.UserViews
                             {
                                 await DisplayAlert("Satisfactorio", $"La compra ha sido enviada.\n\nTiempo estimado de llegada:\n{rnd.Next(25, 40)} Minutos.", "Entendido");
                                 Preferences.Remove("ShoppingCar");
-                                await Navigation.PopAsync();
+                                await Navigation.PopToRootAsync();
                             }
                             else
                             {

@@ -11,6 +11,7 @@
                         <Label Text="Detalles de compra" HorizontalOptions="CenterAndExpand" FontSize="18" TextColor="{StaticResource colorBlack}" Margin="0,10,0,10"></Label>
                         <Frame>
                             <StackLayout>
+                                <Label Text="0000/00/00" x:Name="DateTimeText" HorizontalOptions="EndAndExpand"></Label>
                                 <Label Text="Cliente: "></Label>
                                 <Label Text="NoClientNameFound" x:Name="ClientName" TextColor="{StaticResource colorBlack}" FontSize="12"></Label>
 

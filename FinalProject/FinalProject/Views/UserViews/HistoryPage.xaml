@@ -2,11 +2,48 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.UserViews.HistoryPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <AbsoluteLayout>
+        <StackLayout Padding="15, 15" BackgroundColor="{StaticResource colorPrimary}">
+            <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="15">
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ListView Grid.Row="3" x:Name="ProductListView" ItemsSource="{Binding Sales}" HasUnevenRows="True" IsRefreshing="True" IsPullToRefreshEnabled="True" HeightRequest="730">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <SwipeView>
+                                            <StackLayout Margin="0, 10">
+                                                <Frame BorderColor="{StaticResource colorShadows}" CornerRadius="15">
+                                                    <StackLayout  Orientation="Horizontal" Padding="0" Spacing="15">
+                                                        <StackLayout HorizontalOptions="StartAndExpand">
+                                                            <Label Text="{Binding ClientName}" FontSize="12" FontAttributes="Bold"/>
+                                                            <Label Text="{Binding ClientPhone}" FontSize="9" LineBreakMode="TailTruncation"/>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Label Text="{Binding TotalToPay}" FontSize="12"/>
+                                                                <Label Text="Lps" FontSize="11"/>
+                                                            </StackLayout>
+                                                            <Label Text="{Binding Detail}" FontSize="12"/>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </StackLayout>
+                                        </SwipeView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </StackLayout>
+            </Frame>
         </StackLayout>
-    </ContentPage.Content>
+    </AbsoluteLayout>
 </ContentPage>
