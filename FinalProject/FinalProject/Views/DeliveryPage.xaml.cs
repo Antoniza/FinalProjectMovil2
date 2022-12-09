@@ -1,4 +1,7 @@
-﻿using FinalProject.ViewModels;
+﻿using FinalProject.Models;
+using FinalProject.Providers;
+using FinalProject.ViewModels;
+using FinalProject.Views.DeliveryViews;
 using Firebase.Auth;
 using Newtonsoft.Json;
 using System;
@@ -21,7 +24,17 @@ namespace FinalProject.Views
             InitializeComponent();
             BindingContext = new DeliveryViewModel();
 
+            HistoryListView.RefreshCommand = new Command(() =>
+            {
+                OnAppearing();
+            });
+
             GetProfileInformationAndRefreshToken();
+
+            MenuButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => OpenModal()));
+            ClosePopUpModal.GestureRecognizers.Add(new TapGestureRecognizer((view) => CloseModal()));
+
+            PopUpModal.IsVisible = false;
         }
 
         public async void GetProfileInformationAndRefreshToken()
@@ -36,6 +49,9 @@ namespace FinalProject.Views
                 Preferences.Set("MyFirebaseRefreshToken", JsonConvert.SerializeObject(RefreshedContent));
                 //Now lets grab user information
                 UserName.Text = Preferences.Get("Username", "UserNoDefined");
+                UserEmail.Text = Preferences.Get("Email", "NoEmailFounded");
+                UserPhone.Text = Preferences.Get("Phone", "00000000");
+                UserImage.Source = Preferences.Get("Image", "https://i.ibb.co/vhh0Gkj/users.png");
 
             }
             catch (Exception ex)
@@ -43,6 +59,30 @@ namespace FinalProject.Views
                 Console.WriteLine(ex.Message);
                 await Application.Current.MainPage.DisplayAlert("Alerta", "La sesión ya ha terminado", "OK");
             }
+        }
+
+        private void OpenModal()
+        {
+            PopUpModal.IsVisible = true;
+        }
+
+        private void CloseModal()
+        {
+            PopUpModal.IsVisible = false;
+        }
+
+        protected override async void OnAppearing()
+        {
+            var historyList = await SalesProvider.GetPendingSales();
+            HistoryListView.ItemsSource = null;
+            HistoryListView.ItemsSource = historyList;
+            HistoryListView.IsRefreshing = false;
+        }
+
+        private void HistoryListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var sale = e.Item as Sales;
+            Navigation.PushAsync(new TaskSalePage(sale));
         }
     }
 }

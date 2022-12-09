@@ -75,21 +75,9 @@ namespace FinalProject.Views.UserViews
                     Longitude.Text = $"{location.Longitude}";
                 }
             }
-            catch (FeatureNotSupportedException fnsEx)
-            {
-                // Handle not supported on device exception
-            }
-            catch (FeatureNotEnabledException fneEx)
-            {
-                // Handle not enabled on device exception
-            }
-            catch (PermissionException pEx)
-            {
-                // Handle permission exception
-            }
             catch (Exception ex)
             {
-                // Unable to get location
+                await DisplayAlert("No ubicacionb", ex.Message, "OK");
             }
         }
 
@@ -161,6 +149,7 @@ namespace FinalProject.Views.UserViews
                                 await DisplayAlert("Satisfactorio", $"La compra ha sido enviada.\n\nTiempo estimado de llegada:\n{rnd.Next(25, 40)} Minutos.", "Entendido");
                                 Preferences.Remove("ShoppingCar");
                                 await Navigation.PopToRootAsync();
+                                SendNotify();
                             }
                             else
                             {
@@ -174,6 +163,11 @@ namespace FinalProject.Views.UserViews
             {
                 await DisplayAlert("Alerta", "Se deben llenar todos los campos del formulario.", "OK");
             }
+        }
+
+        private void SendNotify()
+        {
+            Plugin.LocalNotifications.CrossLocalNotifications.Current.Show("El Económico", "Su pedido ha sido revisado y se ha empezado el proceso de compras.",123, DateTime.Now.AddSeconds(15));
         }
     }
 }

@@ -48,6 +48,7 @@ namespace FinalProject.Views
                 UserName.Text = Preferences.Get("Username", "UserNoDefined");
                 UserEmail.Text = Preferences.Get("Email", "NoEmailFounded");
                 UserPhone.Text = Preferences.Get("Phone", "00000000");
+                UserImage.Source = Preferences.Get("Image", "https://i.ibb.co/vhh0Gkj/users.png");
 
             }
             catch (Exception ex)

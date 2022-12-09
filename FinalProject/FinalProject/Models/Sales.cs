@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FinalProject.Models
 {
-    class Sales
+    public class Sales
     {
         public String Id { get; set; }
         public String ClientName { get; set; }

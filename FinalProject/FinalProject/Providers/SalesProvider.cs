@@ -1,6 +1,7 @@
 ﻿using FinalProject.Models;
 using Firebase.Database;
 using Firebase.Database.Query;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,36 @@ namespace FinalProject.Providers
                 ShoppingCar = item.Object.ShoppingCar,
                 State = item.Object.State
             }).Where(h => h.ClientMail.ToLower().Contains(Preferences.Get("Email", "").ToLower())).ToList();
+        }
+        //==============================================================================
+
+        //==============================================================================
+        public static async Task<List<Sales>> GetPendingSales()
+        {
+            string aux = "Pendiente";
+            return (await firebase.Child(nameof(Sales)).OnceAsync<Sales>()).Select(item => new Sales
+            {
+                Id = item.Key,
+                ClientName = item.Object.ClientName,
+                ClientMail = item.Object.ClientMail,
+                ClientPhone = item.Object.ClientPhone,
+                ClientLatitude = item.Object.ClientLatitude,
+                ClientLongitude = item.Object.ClientLongitude,
+                TotalToPay = item.Object.TotalToPay,
+                Detail = item.Object.Detail,
+                Date = item.Object.Date,
+                PayFormat = item.Object.PayFormat,
+                ShoppingCar = item.Object.ShoppingCar,
+                State = item.Object.State
+            }).Where(h => h.State.ToLower().Contains(aux.ToLower())).ToList();
+        }
+        //==============================================================================
+
+        //==============================================================================
+        public static async Task<bool> UpdateState(Sales sale)
+        {
+            await firebase.Child(nameof(Sales) + "/" + sale.Id).PutAsync(JsonConvert.SerializeObject(sale));
+            return true;
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿using FinalProject.Providers;
+﻿using FinalProject.Models;
+using FinalProject.Providers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -17,7 +19,7 @@ namespace FinalProject.Views.UserViews
         {
             InitializeComponent();
 
-            ProductListView.RefreshCommand = new Command(() =>
+            HistoryListView.RefreshCommand = new Command(() =>
             {
                 OnAppearing();
             });
@@ -26,9 +28,15 @@ namespace FinalProject.Views.UserViews
         protected override async void OnAppearing()
         {
             var historyList = await SalesProvider.GetUserHistory(Preferences.Get("Email", ""));
-            ProductListView.ItemsSource = null;
-            ProductListView.ItemsSource = historyList;
-            ProductListView.IsRefreshing = false;
+            HistoryListView.ItemsSource = null;
+            HistoryListView.ItemsSource = historyList;
+            HistoryListView.IsRefreshing = false;
+        }
+
+        private void HistoryListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var history = e.Item as Sales;
+            Navigation.PushAsync(new HistoryDetailPage(history));
         }
     }
 }

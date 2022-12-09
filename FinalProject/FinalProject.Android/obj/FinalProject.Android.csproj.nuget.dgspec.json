@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[5.0.1, )"
             },
+            "Xam.Plugins.Notifier": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.6.1, )"
@@ -151,6 +155,10 @@
             "Xam.Plugin.Media": {
               "target": "Package",
               "version": "[5.0.1, )"
+            },
+            "Xam.Plugins.Notifier": {
+              "target": "Package",
+              "version": "[3.0.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

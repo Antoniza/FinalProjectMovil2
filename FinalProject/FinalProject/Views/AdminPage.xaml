@@ -86,7 +86,7 @@
                 <AbsoluteLayout>
                     <Image Source="https://i.ibb.co/dDnmXYB/close.png" Scale="0.6" AbsoluteLayout.LayoutBounds="0, 0, 35,35" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="ClosePopUpModal"></Image>
                     <Frame Padding="0" HeightRequest="200" WidthRequest="200" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0.5,0,200,200" AbsoluteLayout.LayoutFlags="PositionProportional">
-                        <Image Source="https://i.ibb.co/vhh0Gkj/users.png"></Image>
+                        <Image Source="https://i.ibb.co/vhh0Gkj/users.png" x:Name="UserImage" Scale="1.5"></Image>
                     </Frame>
                     <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.4, 300,50" AbsoluteLayout.LayoutFlags="PositionProportional">
                         <Label x:Name="UserName" Text="NoUserFounded" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="{StaticResource colorBlack}"></Label>
